@@ -57,6 +57,8 @@ in
           { "emacs-launcher.command".source = myEmacsLauncher; }
         ];
 
+        sessionPath = [ "${config.home.homeDirectory}/.local/bin" ];  # ← add this
+
         stateVersion = "23.11";
       };
       programs = {} // import ../shared/home-manager.nix { inherit config pkgs lib; };
