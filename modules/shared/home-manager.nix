@@ -61,6 +61,7 @@ let name = "Steven";
 
       # Always color ls and group directories
       alias ls='ls --color=auto'
+      alias assume="source ${pkgs.granted}/bin/assume"
     '';
   };
 
