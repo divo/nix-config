@@ -6,6 +6,9 @@ _:
   "visual-studio-code"
   "zed"
   "figma"
+  "obsidian"
+  "numi"
+
 
   # Productivity Tools
   "raycast"
@@ -13,7 +16,8 @@ _:
 
   # Browsers
   "google-chrome"
-
+  "firefox"
+  
   # Communication Tools - Examples (uncomment as needed)
   # "discord"
   "notion"
@@ -26,6 +30,11 @@ _:
   "1password"
   "warp"
   "anki"
+  "flux"
+  "sourcetree"
+  "texshop"
+  "alfred"
+  "chatgpt"
   # "rectangle"
 
   # Entertainment Tools - Examples (uncomment as needed)

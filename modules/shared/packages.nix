@@ -15,6 +15,7 @@ with pkgs; [
   sqlite
   wget
   zip
+  granted
 
   # Encryption and security tools
   age
@@ -54,6 +55,8 @@ with pkgs; [
   zsh-powerlevel10k
   neovim
   lazygit
+  claude-code
+  awscli2
 
   # Python packages
   python3
