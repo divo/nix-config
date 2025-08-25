@@ -77,7 +77,7 @@ let user = "stevendiviney"; in
         autohide = false;
         show-recents = false;
         launchanim = true;
-        orientation = "bottom";
+        orientation = "left";
         tilesize = 48;
       };
 
