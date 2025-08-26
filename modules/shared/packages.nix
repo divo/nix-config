@@ -41,6 +41,7 @@ with pkgs; [
 
   # Node.js development tools
   nodejs_24
+  yarn
 
   # Text and terminal utilities
   htop
