@@ -59,6 +59,7 @@ with pkgs; [
   lazygit
   claude-code
   awscli2
+  devenv
 
   # Python packages
   python3
