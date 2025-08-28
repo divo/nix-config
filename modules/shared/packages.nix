@@ -39,7 +39,7 @@ with pkgs; [
   meslo-lgs-nf
 
   # Node.js development tools
-  nodejs_24
+  nodejs_20
   yarn
 
   # Text and terminal utilities
