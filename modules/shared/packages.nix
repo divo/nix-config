@@ -16,7 +16,6 @@ with pkgs; [
   wget
   zip
   granted
-  openvpn
 
   # Encryption and security tools
   age

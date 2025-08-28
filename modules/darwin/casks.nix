@@ -35,7 +35,6 @@ _:
   "texshop"
   "alfred"
   "chatgpt"
-  "openvpn-connect"
   # "rectangle"
 
   # Entertainment Tools - Examples (uncomment as needed)
