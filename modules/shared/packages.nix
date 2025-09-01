@@ -61,6 +61,6 @@ with pkgs; [
   devenv
 
   # Python packages
-  python3
   virtualenv
+  asdf-vm
 ]
