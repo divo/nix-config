@@ -62,6 +62,7 @@ with pkgs; [
   claude-code
   awscli2
   devenv
+  codex
 
   # Python packages
   virtualenv
