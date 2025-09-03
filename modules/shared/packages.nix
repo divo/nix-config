@@ -16,6 +16,9 @@ with pkgs; [
   wget
   zip
   granted
+  postgresql_15
+
+  # tool-chain
 
   # Encryption and security tools
   age
