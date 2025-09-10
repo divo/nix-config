@@ -63,6 +63,7 @@ with pkgs; [
   awscli2
   devenv
   codex
+  cocoapods
 
   # Python packages
   virtualenv
