@@ -17,6 +17,7 @@ with pkgs; [
   zip
   granted
   postgresql_15
+  ripgrep
 
   # tool-chain
 
