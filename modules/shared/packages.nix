@@ -18,6 +18,7 @@ with pkgs; [
   granted
   postgresql_15
   ripgrep
+  fzf
 
   # tool-chain
 
