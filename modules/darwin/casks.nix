@@ -24,6 +24,7 @@ _:
   "slack"
   # "telegram"
   "zoom"
+  "linear-linear"
 
   # Utility Tools - Examples (uncomment as needed)
   # "syncthing"
