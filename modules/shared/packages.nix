@@ -66,6 +66,8 @@ with pkgs; [
   devenv
   codex
   cocoapods
+  delta
+  gh
 
   # Python packages
   virtualenv
