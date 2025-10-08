@@ -79,8 +79,20 @@ let name = "Steven";
       core = {
 	    editor = "vim";
         autocrlf = "input";
+        pager = "delta";
       };
-      commit.gpgsign = true;
+      interactive = {
+        diffFilter = "delta --color-only";
+      };
+      delta = {
+        navigate = true;
+        dark = true;
+        side-by-side = true;
+      };
+      merge = {
+        conflictStyle = "zdiff3";
+      };
+      commit.gpgsign = false;
       pull.rebase = true;
       rebase.autoStash = true;
     };
