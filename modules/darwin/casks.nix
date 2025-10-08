@@ -36,6 +36,7 @@ _:
   "texshop"
   "alfred"
   "chatgpt"
+  "postman"
   # "rectangle"
 
   # Entertainment Tools - Examples (uncomment as needed)
