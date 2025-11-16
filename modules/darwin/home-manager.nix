@@ -55,6 +55,7 @@ in
           sharedFiles
           additionalFiles
           { "emacs-launcher.command".source = myEmacsLauncher; }
+          { ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/dotfiles/nvim-lazyvim"; }
         ];
 
         sessionPath = [ "${config.home.homeDirectory}/.local/bin" ];
