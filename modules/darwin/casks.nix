@@ -8,11 +8,13 @@ _:
   "figma"
   "obsidian"
   "numi"
+  "android-studio"
 
 
   # Productivity Tools
   "raycast"
   "amethyst"
+  "microsoft-onenote"
 
   # Browsers
   "google-chrome"
@@ -37,6 +39,7 @@ _:
   "alfred"
   "chatgpt"
   "postman"
+  "raycast"
   # "rectangle"
 
   # Entertainment Tools - Examples (uncomment as needed)
