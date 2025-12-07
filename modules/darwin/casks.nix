@@ -9,6 +9,7 @@ _:
   "obsidian"
   "numi"
   "android-studio"
+  "pgadmin4"
 
 
   # Productivity Tools
