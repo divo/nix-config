@@ -72,4 +72,5 @@ with pkgs; [
   # Python packages
   virtualenv
   asdf-vm
+  uv
 ]
