@@ -38,6 +38,10 @@
       linuxSystems = [ "x86_64-linux" "aarch64-linux" ];
       darwinSystems = [ "aarch64-darwin" "x86_64-darwin" ];
       forAllSystems = f: nixpkgs.lib.genAttrs (linuxSystems ++ darwinSystems) f;
+      overlays = let path = ./overlays; in with builtins;
+        map (n: import (path + ("/" + n)))
+            (filter (n: match ".*\\.nix" n != null)
+                    (attrNames (readDir path)));
       devShell = system: let pkgs = nixpkgs.legacyPackages.${system}; in {
         default = with pkgs; mkShell {
           nativeBuildInputs = with pkgs; [ bashInteractive git age age-plugin-yubikey ];
@@ -79,12 +83,24 @@
       apps = nixpkgs.lib.genAttrs linuxSystems mkLinuxApps // nixpkgs.lib.genAttrs darwinSystems mkDarwinApps;
 
       darwinConfigurations = nixpkgs.lib.genAttrs darwinSystems (system:
-        darwin.lib.darwinSystem {
+        let
+          pkgs = import nixpkgs {
+            inherit system;
+            inherit overlays;
+            config = {
+              allowUnfree = true;
+              allowBroken = true;
+              allowInsecure = false;
+              allowUnsupportedSystem = true;
+            };
+          };
+        in darwin.lib.darwinSystem {
           inherit system;
-          specialArgs = inputs;
+          specialArgs = inputs // { inherit pkgs; };
           modules = [
             home-manager.darwinModules.home-manager
             nix-homebrew.darwinModules.nix-homebrew
+            { nixpkgs.pkgs = pkgs; }
             {
               nix-homebrew = {
                 inherit user;

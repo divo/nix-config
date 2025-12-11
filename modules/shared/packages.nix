@@ -68,6 +68,7 @@ with pkgs; [
   cocoapods
   delta
   gh
+  mongosh
 
   # Python packages
   virtualenv
