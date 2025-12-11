@@ -13,8 +13,6 @@ let user = "stevendiviney"; in
 
   # Setup user, packages, programs
   nix = {
-    package = pkgs.nix;
-
     settings = {
       trusted-users = [ "@admin" "${user}" ];
       substituters = [ "https://nix-community.cachix.org" "https://cache.nixos.org" ];
