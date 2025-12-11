@@ -28,10 +28,6 @@ with pkgs; [
   gnupg
   libfido2
 
-  # Cloud-related tools and SDKs
-  docker
-  docker-compose
-
   # Media-related packages
   emacs-all-the-icons-fonts
   dejavu_fonts
@@ -67,6 +63,8 @@ with pkgs; [
   codex
   cocoapods
   mongosh
+  mongodb-tools
+  orbstack
 
   # Python packages
   virtualenv
