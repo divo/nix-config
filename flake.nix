@@ -1,11 +1,11 @@
 {
   description = "Starter Configuration with secrets for MacOS and NixOS";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     agenix.url = "github:ryantm/agenix";
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.url = "github:nix-community/home-manager";
     darwin = {
-      url = "github:nix-darwin/nix-darwin/nix-darwin-24.11";
+      url = "github:LnL7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-homebrew = {
@@ -38,10 +38,6 @@
       linuxSystems = [ "x86_64-linux" "aarch64-linux" ];
       darwinSystems = [ "aarch64-darwin" "x86_64-darwin" ];
       forAllSystems = f: nixpkgs.lib.genAttrs (linuxSystems ++ darwinSystems) f;
-      overlays = let path = ./overlays; in with builtins;
-        map (n: import (path + ("/" + n)))
-            (filter (n: match ".*\\.nix" n != null)
-                    (attrNames (readDir path)));
       devShell = system: let pkgs = nixpkgs.legacyPackages.${system}; in {
         default = with pkgs; mkShell {
           nativeBuildInputs = with pkgs; [ bashInteractive git age age-plugin-yubikey ];
@@ -83,24 +79,12 @@
       apps = nixpkgs.lib.genAttrs linuxSystems mkLinuxApps // nixpkgs.lib.genAttrs darwinSystems mkDarwinApps;
 
       darwinConfigurations = nixpkgs.lib.genAttrs darwinSystems (system:
-        let
-          pkgs = import nixpkgs {
-            inherit system;
-            inherit overlays;
-            config = {
-              allowUnfree = true;
-              allowBroken = true;
-              allowInsecure = false;
-              allowUnsupportedSystem = true;
-            };
-          };
-        in darwin.lib.darwinSystem {
+        darwin.lib.darwinSystem {
           inherit system;
-          specialArgs = inputs // { inherit pkgs; };
+          specialArgs = inputs;
           modules = [
             home-manager.darwinModules.home-manager
             nix-homebrew.darwinModules.nix-homebrew
-            { nixpkgs.pkgs = pkgs; }
             {
               nix-homebrew = {
                 inherit user;

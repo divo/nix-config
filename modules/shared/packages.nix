@@ -66,12 +66,9 @@ with pkgs; [
   devenv
   codex
   cocoapods
-  delta
-  gh
   mongosh
 
   # Python packages
   virtualenv
   asdf-vm
-  uv
 ]
