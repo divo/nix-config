@@ -1,0 +1,4 @@
+ 1. Created an overlay (overlays/20-mongosh.nix) that fetches the specific mongosh 1.10.6 arm64 binary
+ 2. Modified flake.nix to create pkgs with overlays at the flake level and pass it via nixpkgs.pkgs
+ 3. Simplified modules/shared/default.nix - removed the config/overlays since they're now handled in the flake
+ 4. Added the overlay to git - flakes only see tracked files
